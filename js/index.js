@@ -3,7 +3,15 @@ var signinPassword=document.querySelector("input#signinPassword")
 var loginbutton = document.querySelector("a")
     var paragraph=document.getElementById("incorrect")
 
-var signUpArray = JSON.parse(localStorage.getItem("users")) 
+
+
+if (localStorage.getItem('users') == null) {
+    signUpArray = []
+} else {
+    signUpArray = JSON.parse(localStorage.getItem('users'))
+}
+console.log(signUpArray)
+
 loginbutton.addEventListener("click" , login);
 
 function signinEmpty() {
